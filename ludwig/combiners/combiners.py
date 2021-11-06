@@ -514,13 +514,6 @@ class TabNetCombiner(CombinerClass):
         else:
             self.dropout = None
 
-    # todo: tf specific remove
-    # def build(self, input_shape):
-    #     self.flatten_layers = {
-    #         k: tf.keras.layers.Flatten()
-    #         for k in input_shape.keys()
-    #     }
-
     @property
     def concatenated_shape(self) -> torch.Size:
         # compute the size of the last dimension for the incoming encoder outputs
