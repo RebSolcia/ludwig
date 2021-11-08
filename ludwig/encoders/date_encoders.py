@@ -235,7 +235,7 @@ class DateEmbed(DateEncoder):
             :type inputs: Tensor
          """
         # ================ Embeddings ================
-        input_vector = inputs.type(torch.IntTensor)
+        input_vector = inputs.type(torch.int)
 
         scaled_year = self.year_fc(
             input_vector[:, 0:1].type(torch.FloatTensor))

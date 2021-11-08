@@ -563,6 +563,10 @@ class TabNetCombiner(CombinerClass):
     def get_schema_cls():
         return TabNetCombinerConfig
 
+    @property
+    def output_shape(self) -> torch.Size:
+        return self.tabnet.output_shape
+
 
 @dataclass
 class TransformerCombinerConfig:
