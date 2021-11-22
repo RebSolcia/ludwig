@@ -327,7 +327,7 @@ class MAEMetric(MeanAbsoluteError):
         super().__init__(**kwargs)
 
     def update(self, preds: Tensor, target: Tensor) -> None:
-        super().update(preds.detach(), target)
+        super().update(preds, target)
 
 
 class MSEMetric(MeanSquaredError):
@@ -335,7 +335,7 @@ class MSEMetric(MeanSquaredError):
         super(MSEMetric, self).__init__(**kwargs)
 
     def update(self, preds: Tensor, target: Tensor) -> None:
-        super().update(preds.detach(), target)
+        super().update(preds, target)
 
 
 class JaccardMetric(MeanMetric):
